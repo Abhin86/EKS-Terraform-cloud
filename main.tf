@@ -29,7 +29,7 @@ module "eks" {
   cluster_name    = "my-cluster"
   cluster_version = "1.29"
 
-  cluster_endpoint_public_access  = true
+  cluster_endpoint_public_access  = false
 
   cluster_addons = {
     coredns = {
