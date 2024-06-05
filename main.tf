@@ -84,6 +84,8 @@ module "eks" {
     }
   }
 
+cluster_enabled_log_types = [ "audit", "api", "authenticator" ]
+
   tags = {
     Environment = "dev"
     Terraform   = "true"
