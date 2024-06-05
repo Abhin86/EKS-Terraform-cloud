@@ -28,10 +28,7 @@ module "eks" {
 
   cluster_name    = "my-cluster"
   cluster_version = "1.29"
-
   
-  cluster_endpoint_public_access = true
-
   cluster_addons = {
     coredns = {
       most_recent = true
@@ -63,6 +60,7 @@ module "eks" {
       capacity_type  = "SPOT"
     }
   }
+  cluster_endpoint_public_access = true
 
   # Cluster access entry
   # To add the current caller identity as an administrator
