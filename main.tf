@@ -84,7 +84,7 @@ module "eks" {
     }
   }
 
-cluster_enabled_log_types = [ "audit", "api", "authenticator" ]
+cluster_enabled_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
 
   tags = {
     Environment = "dev"
