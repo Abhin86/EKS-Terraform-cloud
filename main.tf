@@ -86,11 +86,6 @@ module "eks" {
 
   # Logging configuration
   cluster_enabled_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
-  cluster_encryption_config = {
-                "resources": [
-                    "secrets"
-                              ]
-                                }
 
   tags = {
     Environment = "dev"
