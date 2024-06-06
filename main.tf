@@ -18,6 +18,7 @@ variable "AWS_ACCESS_KEY" {
   type        = string
   sensitive   = true
 }
+
 provider "aws" {
   region = "us-east-1"
 }
@@ -83,7 +84,9 @@ module "eks" {
     }
   }
 
-cluster_enabled_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
+  # Logging configuration
+  cluster_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
+  manage_aws_auth = true
 
   tags = {
     Environment = "dev"
