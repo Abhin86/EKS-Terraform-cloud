@@ -60,7 +60,6 @@ module "eks" {
       capacity_type  = "SPOT"
     }
   }
-  cluster_endpoint_public_access = false
 
   # Cluster access entry
   # To add the current caller identity as an administrator
