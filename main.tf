@@ -65,7 +65,7 @@ module "eks" {
   # Cluster access entry
   # To add the current caller identity as an administrator
   enable_cluster_creator_admin_permissions = true
-
+  
   access_entries = {
     # One access entry with a policy associated
     example = {
@@ -86,6 +86,11 @@ module "eks" {
 
   # Logging configuration
   cluster_enabled_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
+  cluster_encryption_config = {
+                "resources": [
+                    "secrets"
+                              ]
+                                }
 
   tags = {
     Environment = "dev"
