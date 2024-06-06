@@ -85,8 +85,7 @@ module "eks" {
   }
 
   # Logging configuration
-  cluster_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
-  manage_aws_auth = true
+  cluster_enabled_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
 
   tags = {
     Environment = "dev"
